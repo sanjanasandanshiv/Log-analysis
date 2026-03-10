@@ -1,0 +1,57 @@
+Log Analysis Investigation Report
+
+Project: Linux Authentication Log Analysis
+Tool Used: Python Log Parser
+Log Source: Linux System Authentication Logs
+
+Summary
+This investigation analyzed Linux authentication logs to identify suspicious login attempts, system events, and user activity. The log file contained multiple authentication-related events including login attempts, session activities, and system alerts.
+
+Findings
+
+Unknown User Attempts
+Total: 117
+
+These events indicate attempts to log in using usernames that do not exist on the system. This behavior is commonly associated with automated brute-force attacks attempting to discover valid accounts.
+
+Authentication Failures
+Total: 491
+
+Authentication failures represent unsuccessful login attempts. A high number of failures may indicate password guessing attacks or unauthorized access attempts.
+
+Successful Logins
+Total: 123
+
+Successful login sessions were detected for several system users. These represent legitimate authentication events where users successfully accessed the system.
+
+User Logouts
+Total: 123
+
+Logout events correspond to user sessions being closed normally.
+
+Network Connections
+Total: 909
+
+Network connection events show remote systems establishing communication with the server. These connections may represent normal system activity but should be monitored for suspicious patterns.
+
+Kerberos Authentication Failures
+Total: 23
+
+Kerberos failures indicate issues with the authentication mechanism used for verifying user credentials.
+
+Program Crash Alerts
+Total: 43
+
+Program exit alerts indicate abnormal termination of services or processes. These may require further investigation to determine the cause.
+
+Conclusion
+The analysis identified a significant number of authentication failures and unknown user attempts, which could suggest automated login attempts or brute-force activity. While successful logins and network connections appear to be normal operational behavior, continuous monitoring is recommended to detect anomalies.
+
+Recommendations
+
+* Monitor repeated authentication failures.
+* Implement account lockout policies to mitigate brute-force attacks.
+* Investigate abnormal program exits.
+* Review network connection sources for suspicious activity.
+
+This project demonstrates basic SOC-level log analysis techniques for identifying potential security events in system logs.
